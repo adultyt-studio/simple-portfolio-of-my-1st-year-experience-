@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ganesh Ravindra Ghongade - Self-taught Programmer, Graphic Designer & Digital Marketer. B.Com Computer Application student at G.S. College, Nagpur. Explore innovative projects and creative solutions.">
+  <meta name="keywords" content="Programming, Graphic Design, Digital Marketing, UX/UI, Portfolio, Developer, Designer">
+  <meta name="author" content="Ganesh Ravindra Ghongade">
+  <title>Ganesh Ravindra Ghongade | Programmer • Designer • Marketer</title>
+  <style>
+    :root {
+      --primary: #3498db;
+      --secondary: #2c3e50;
+      --accent: #e74c3c;
+      --light: #ecf0f1;
+      --lighter: #f8f9fa;
+      --dark: #2c3e50;
+      --text: #333;
+      --border: #ddd;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-sm);
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover:after {
+      width: 100%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 120px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 500px;
+      height: 500px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(20px); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      animation: slideUp 0.8s ease;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero .subtitle {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 15px 40px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: white;
+      color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: var(--primary);
+    }
+
+    /* Section Styles */
+    section {
+      padding: 80px 0;
+      position: relative;
+    }
+
+    section h2 {
+      font-size: 2.8rem;
+      color: var(--dark);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-description {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      color: #666;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    /* About Section */
+    .about {
+      background: var(--lighter);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .highlight {
+      padding: 1.5rem;
+      background: white;
+      border-radius: 10px;
+      border-left: 4px solid var(--primary);
+      transition: transform 0.3s ease;
+    }
+
+    .highlight:hover {
+      transform: translateX(10px);
+    }
+
+    .highlight strong {
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    /* Skills Section */
+    .skills {
+      background: white;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-card {
+      background: var(--lighter);
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .skill-card:hover::before {
+      left: 100%;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow);
+    }
+
+    .skill-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .skill-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .skill-items {
+      text-align: left;
+    }
+
+    .skill-items li {
+      list-style: none;
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: #666;
+    }
+
+    .skill-items li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    /* Projects Section */
+    .projects {
+      background: var(--lighter);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow);
+    }
+
+    .project-header {
+      height: 200px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .project-content {
+      padding: 2rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-content h3 {
+      font-size: 1.4rem;
+      color: var(--dark);
+      margin-bottom: 0.8rem;
+    }
+
+    .project-content p {
+      color: #666;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      background: var(--primary);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .project-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .project-link:hover {
+      gap: 1rem;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: white;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 2rem auto;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .social-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      padding: 10px 20px;
+      border: 2px solid white;
+      border-radius: 50px;
+    }
+
+    .social-links a:hover {
+      background: white;
+      color: var(--primary);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 3rem 0;
+      border-top: 4px solid var(--primary);
+    }
+
+    .footer-content {
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-content p {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-bottom {
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero .subtitle {
+        font-size: 1.1rem;
+      }
+
+      section h2 {
+        font-size: 2rem;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+
+      .about-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .social-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .social-links a {
+        width: 100%;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a href="#" class="logo">GRG</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Ganesh Ravindra Ghongade</h1>
+        <p class="subtitle">Programmer • Designer • Digital Marketer</p>
+        
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">3+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Self-Taught</div>
+          </div>
+        </div>
+
+        <div class="cta-buttons">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <p class="section-subtitle">Who I Am</p>
+      <h2>About Me</h2>
+      
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Versatile Creator & Problem Solver</h3>
+          <p>I'm a B.Com Computer Application student at G.S. College of Commerce & Economics, Nagpur, with a passion for creating innovative digital solutions. My journey has been self-directed, blending commerce education with hands-on tech expertise.</p>
+          <p>Specializing in programming, graphic design, and digital marketing, I bring a unique interdisciplinary perspective to every project. I'm currently developing an exciting indie project that combines all my skills.</p>
+          
+          <div class="highlight">
+            <strong>🎯 Goal:</strong> Build products that matter and inspire others
+          </div>
+        </div>
+
+        <div class="about-highlights">
+          <div class="highlight">
+            <strong>Education</strong>
+            <p>B.Com Computer Application, G.S. College, Nagpur</p>
+          </div>
+          <div class="highlight">
+            <strong>Approach</strong>
+            <p>User-focused, innovative solutions with attention to detail</p>
+          </div>
+          <div class="highlight">
+            <strong>Learning</strong>
+            <p>Constantly exploring new technologies and design trends</p>
+          </div>
+          <div class="highlight">
+            <strong>Collaboration</strong>
+            <p>Open to freelance work and exciting project partnerships</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <p class="section-subtitle">What I Do Best</p>
+      <h2>Skills & Expertise</h2>
+      <p class="section-description">A blend of technical prowess and creative excellence across multiple domains</p>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">💻</div>
+          <h3>Programming</h3>
+          <ul class="skill-items">
+            <li>Scripting & OOP</li>
+            <li>UX/UI Interactions</li>
+            <li>Resource Management</li>
+            <li>API Integration</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🎨</div>
+          <h3>Graphic Design</h3>
+          <ul class="skill-items">
+            <li>Art Mockups & Prototypes</li>
+            <li>Asset Creation & Optimization</li>
+            <li>Visual Effects & Lighting</li>
+            <li>Typography & Layout</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">📱</div>
+          <h3>Digital Marketing</h3>
+          <ul class="skill-items">
+            <li>SEO Fundamentals</li>
+            <li>Content Strategy</li>
+            <li>Social Media Marketing</li>
+            <li>Brand Development</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <p class="section-subtitle">Recent Works</p>
+      <h2>Featured Projects</h2>
+      <p class="section-description">Showcasing innovative solutions across programming, design, and marketing</p>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">🚀</div>
+          <div class="project-content">
+            <h3>Freelance Web Solutions</h3>
+            <p>Custom development and design solutions delivered to diverse clients, combining programming expertise with creative design.</p>
+            <div class="project-tags">
+              <span class="tag">Programming</span>
+              <span class="tag">Design</span>
+            </div>
+            <a href="https://github.com/adultyt-studio" class="project-link">View on GitHub →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">🎯</div>
+          <div class="project-content">
+            <h3>Digital Marketing Campaigns</h3>
+            <p>Strategic content creation and SEO-optimized campaigns that drive engagement and build brand awareness.</p>
+            <div class="project-tags">
+              <span class="tag">Marketing</span>
+              <span class="tag">Strategy</span>
+            </div>
+            <a href="https://github.com/adultyt-studio" class="project-link">Explore Portfolio →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">✨</div>
+          <div class="project-content">
+            <h3>Creative Asset Library</h3>
+            <p>Comprehensive collection of design assets, mockups, and visual elements for various professional applications.</p>
+            <div class="project-tags">
+              <span class="tag">Design</span>
+              <span class="tag">Assets</span>
+            </div>
+            <a href="https://github.com/adultyt-studio" class="project-link">View Repository →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <p class="section-subtitle">Let's Connect</p>
+      <h2>Get In Touch</h2>
+      <p class="section-description">I'm always interested in hearing about new projects and opportunities</p>
+
+      <div class="social-links">
+        <a href="https://github.com/adultyt-studio" target="_blank">GitHub</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="mailto:your.email@example.com">Email</a>
+      </div>
+
+      <p style="margin-top: 2rem; font-size: 0.95rem;">
+        📧 <strong>Email:</strong> your.email@example.com<br>
+        📍 <strong>Location:</strong> Nagpur, India<br>
+        🔗 <strong>GitHub:</strong> <a href="https://github.com/adultyt-studio" style="color: white; text-decoration: underline;">github.com/adultyt-studio</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <h3>Ganesh Ravindra Ghongade</h3>
+        <p>Programmer • Designer • Digital Marketer</p>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ganesh Ravindra Ghongade. All rights reserved. | Crafted with passion</p>
+      </div>
+    </div>
+  </footer>
+</body>
+  </html>
